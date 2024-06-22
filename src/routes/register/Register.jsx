@@ -1,5 +1,6 @@
 import React from "react";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
+import axios from "../../api";
 
 const initialState = {
   UserName: "",
@@ -14,8 +15,10 @@ const Register = () => {
     useGetInputValue(initialState);
   const handleSubmit = (e) => {
     e.preventDefault();
+    formData.phones = [formData.phones];
     console.log(formData);
-    // setFormData(initialState);
+    axios.post("/auth/user/sign-up", formData);
+    setFormData(initialState);
   };
 
   return (
@@ -55,6 +58,14 @@ const Register = () => {
           placeholder="LastName"
           name="LastName"
           value={formData.LastName}
+          onChange={handleChange}
+        />
+        <input
+          className="outline-none border-black bg-red"
+          type="number"
+          placeholder="Number"
+          name="phones"
+          value={formData.phones}
           onChange={handleChange}
         />
         <button>Sign up</button>
