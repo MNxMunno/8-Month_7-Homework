@@ -1,7 +1,7 @@
 import React from "react";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../../api";
 
 const initialState = {
   UserName: "",
@@ -12,17 +12,16 @@ const Login = () => {
   const { formData, handleChange, setFormData } =
     useGetInputValue(initialState);
 
-  // const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    axios.post("/auth/sign-in", formData).then((res) => {
-      console.log(res);
-      // localStorage.setItem("x-auth-token", res.data.data.token);
-    });
+    axios
+      .post("/auth/sign-in", formData)
+      .then((res) => {
+        localStorage.setItem("x-auth-token", res.data.data.token);
+      })
+      .catch((err) => console.log(err));
 
-    // setFormData(initialState);
+    setFormData(initialState);
   };
 
   return (

@@ -10,11 +10,11 @@ import "./scss/main.scss";
 const App = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users />} />
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<h2>Not Found</h2>} />
       </Routes>

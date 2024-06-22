@@ -6,6 +6,7 @@ const initialState = {
   password: "",
   FirstName: "",
   LastName: "",
+  phones: "",
 };
 
 const Register = () => {
@@ -42,18 +43,18 @@ const Register = () => {
         />
         <input
           className="outline-none border-black bg-red"
-          type="password"
-          placeholder="Password"
-          name="First Name"
+          type="text"
+          placeholder="FirstName"
+          name="FirstName"
           value={formData.FirstName}
           onChange={handleChange}
         />
         <input
           className="outline-none border-black bg-red"
-          type="password"
+          type="text"
           placeholder="LastName"
-          name="Last Name"
-          value={formData.password}
+          name="LastName"
+          value={formData.LastName}
           onChange={handleChange}
         />
         <button>Sign up</button>

@@ -9,9 +9,9 @@ const Header = () => {
           <h1>LOGO</h1>
         </div>
         <div className="nav__items flex gap-4">
-          <NavLink to={"/home"}>Home</NavLink>
+          <NavLink to={"/"}>Home</NavLink>
           <NavLink to={"/users"}>Users</NavLink>
-          <NavLink to={"/"}>Login</NavLink>
+          <NavLink to={"/login"}>Login</NavLink>
           <NavLink to={"/register"}>Register</NavLink>
         </div>
       </nav>
